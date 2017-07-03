@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>User Directory</title>
+    <link rel='stylesheet' type='text/css' href='main.css'>
+  </head>
+  <body>
+    <div class='header-links'>
+      <a href='/' class='all-link'>All Robots</a>
+      <a href='./unemployed' class='unemployed-link'>Unemployed Robots</a>
+      <a href='./employed' class='employed-link'>Employed Robots</a>
+    </div>
+
+    <h1>All Robots</h1>  
+    <div class='all-pictures'>
+
+      {{#result}}
+
+        <div class='each-item'>
+          <a href="./{{id}}"><img src='{{avatar}}'  class='images'></img></a>
+          <div class='text'>
+            <a href="./{{id}}" target='_parent'><span class='name'>{{name}}</span></a><br>
+            <span class='job'>{{job}}</span><br>
+            <span class='company'>{{company}}</span>
+          </div>
+        </div>
+
+      {{/result}}
+
+    <script>
+    let job = document.querySelectorAll('.job');
+    for (let i=0; i<job.length; i++) {
+      if (!job[i].textContent ) {
+        job[i].textContent = 'Available for hire';
+        job[i].setAttribute('class', 'unemployed');}}
+    </script>
+
+    </div>
+  </body>
+</html>
