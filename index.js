@@ -1,11 +1,8 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
 const bodyParser = require('body-parser');
-const routes = require('./routes');
 const path = require('path');
-const mongo = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
-
 const app = express();
 
 app.use(bodyParser.json());
@@ -44,5 +41,4 @@ app.get('/unemployed', function(req, res){
   })
 });
 
-
-// app.use(routes);
+//MUCH ASSISTANCE W/ MONGO FROM https://github.com/zellwk/crud-express-mongo/blob/master/server.js
